@@ -10,6 +10,10 @@ import { CoursesResolver } from './graphql/resolvers/course.resolver';
 import { EnrollmentsResolver } from './graphql/resolvers/enrollments.resolver';
 import { StudentsResolver } from './graphql/resolvers/students.resolver';
 
+import { StudentsService } from '../services/students.service';
+import { CoursesService } from '../services/courses.service';
+import { EnrollmentsService } from '../services/enrollments.service';
+
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -19,6 +23,14 @@ import { StudentsResolver } from './graphql/resolvers/students.resolver';
       autoSchemaFile: path.resolve(process.cwd(), 'src/schema.gql'),
     }),
   ],
-  providers: [CoursesResolver, EnrollmentsResolver, StudentsResolver],
+  providers: [
+    CoursesResolver,
+    EnrollmentsResolver,
+    StudentsResolver,
+
+    StudentsService,
+    CoursesService,
+    EnrollmentsService,
+  ],
 })
 export class HttpModule {}
