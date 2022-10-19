@@ -6,7 +6,7 @@ import path from 'node:path';
 
 import { DatabaseModule } from '../database/database.module';
 
-import { CoursesResolver } from './graphql/resolvers/course.resolver';
+import { CoursesResolver } from './graphql/resolvers/courses.resolver';
 import { EnrollmentsResolver } from './graphql/resolvers/enrollments.resolver';
 import { StudentsResolver } from './graphql/resolvers/students.resolver';
 

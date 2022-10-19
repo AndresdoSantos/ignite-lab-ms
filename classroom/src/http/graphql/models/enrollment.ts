@@ -10,12 +10,10 @@ export class Enrollment {
 
   @Field(() => Student)
   student: Student;
-
   studentId: string;
 
   @Field(() => Course)
   course: Course;
-
   courseId: string;
 
   @Field(() => Date, { nullable: true })
