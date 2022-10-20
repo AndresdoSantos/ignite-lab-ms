@@ -4,6 +4,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import path from 'node:path';
 
+import { MessagingModule } from '../messaging/messaging.module';
 import { DatabaseModule } from '../database/database.module';
 
 import { ProductsResolver } from './graphql/resolvers/products.resolver';
@@ -18,6 +19,7 @@ import { CustomersService } from '../services/customers.services';
   imports: [
     ConfigModule.forRoot(),
     DatabaseModule,
+    MessagingModule,
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       autoSchemaFile: path.resolve(process.cwd(), 'src/schema.gql'),
